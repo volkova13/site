@@ -1,7 +1,24 @@
 </div>
 <div class='col-md-2'>
 <div class='reklama'>
-<a href='reg.php'><p>Регистрация на сайте</p></a>
+
+<?php
+if($_SESSION['id']){
+?>
+<a href='cabinet.php' class='btn btn-link my'>Кабинет 
+<?=($aut_user['login'])?
+$aut_user['login']:'Пользователь ';?>
+</a>
+
+<a href='logaut.php' class='btn btn-link my'>Выход</a>
+<?php
+}else{
+?>
+<a href='reg.php'>Регистрация на сайте</a>
+<a href='login.php'>Вход</a>
+<?php
+}
+?>
 <img src='media/img/rec.gif'>
 </div></div>
 </div>
