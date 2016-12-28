@@ -1,9 +1,9 @@
 <?php session_start();
 require_once ('config/config.php');
+require_once('lips/functions.php');
 if($_SESSION['id']){
 $query="SELECT*FROM users WHERE id=".$_SESSION['id'];
-$aut=mysqli_query($dbcon,$query);
-$aut_user=mysqli_fetch_array($aut);
+$aut_user=selectone($query);
 }
 ?>
 <!Doctype html>

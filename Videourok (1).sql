@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 26 2016 г., 20:45
+-- Время создания: Дек 28 2016 г., 20:24
 -- Версия сервера: 5.5.50
 -- Версия PHP: 7.0.8
 
@@ -19,6 +19,23 @@ SET time_zone = "+00:00";
 --
 -- База данных: `Videourok`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `accaunt`
+--
+
+CREATE TABLE IF NOT EXISTS `accaunt` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `name` tinytext NOT NULL,
+  `phone` tinytext NOT NULL,
+  `address` tinytext NOT NULL,
+  `foto` tinytext NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -103,7 +120,22 @@ CREATE TABLE IF NOT EXISTS `predmets` (
   `schowhide` enum('show','hide') NOT NULL,
   `created_at` date NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `predmets`
+--
+
+INSERT INTO `predmets` (`id`, `class_id`, `user_id`, `name`, `body`, `picture`, `schowhide`, `created_at`, `updated_at`) VALUES
+(1, 1, 3, 'name', 'body', 'D:/OpenServer/domains/volkova/media/foto/.Koala.jpg', 'show', '2016-12-28', '2016-12-28 20:32:10'),
+(2, 2, 3, 'химия', 'body', 'D:/OpenServer/domains/volkova/media/foto/.Jellyfish.jpg', 'show', '2016-12-28', '2016-12-28 20:33:00'),
+(3, 2, 3, 'химия', 'body', 'D:/OpenServer/domains/volkova/media/foto/.Jellyfish.jpg', 'show', '2016-12-28', '2016-12-28 20:42:52'),
+(4, 2, 3, 'химия', '', 'D:/OpenServer/domains/volkova/media/foto/.Jellyfish.jpg', 'show', '2016-12-28', '2016-12-28 20:50:53'),
+(5, 2, 3, 'химия', '', 'D:/OpenServer/domains/volkova/media/foto/.Jellyfish.jpg', 'show', '2016-12-28', '2016-12-28 20:53:19'),
+(6, 4, 3, 'fff', '443', 'D:/OpenServer/domains/volkova/media/foto/.Jellyfish.jpg', 'show', '2016-12-28', '2016-12-28 20:53:58'),
+(7, 4, 3, 'fff', '443', 'D:/OpenServer/domains/volkova/media/foto/.Jellyfish.jpg', 'show', '2016-12-28', '2016-12-28 20:54:36'),
+(8, 4, 3, 'fff', '443', 'D:/OpenServer/domains/volkova/media/foto/.Jellyfish.jpg', 'show', '2016-12-28', '2016-12-28 20:58:40'),
+(9, 4, 3, 'dd', 'ddd', 'D:/OpenServer/domains/volkova/media/foto/.Penguins.jpg', 'show', '2016-12-28', '2016-12-28 21:00:13');
 
 -- --------------------------------------------------------
 
@@ -119,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `datereg` date NOT NULL,
   `lastvisit` datetime NOT NULL,
   `blockunblock` enum('unblock','block') NOT NULL DEFAULT 'unblock'
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `users`
@@ -130,7 +162,8 @@ INSERT INTO `users` (`id`, `email`, `login`, `pass`, `datereg`, `lastvisit`, `bl
 (2, 'ful@tut.by', '', '123', '2016-12-23', '2016-12-23 20:30:05', 'unblock'),
 (3, 'dr@mail.ru', 'fur', '25', '2016-12-23', '2016-12-23 20:31:27', 'unblock'),
 (4, 'volkova@tut.by', 'volkova', '152', '2016-12-23', '2016-12-23 20:57:57', 'unblock'),
-(5, 'volkova@tut.by', 'hjh', '123', '2016-12-23', '2016-12-23 21:00:57', 'unblock');
+(5, 'volkova@tut.by', 'hjh', '123', '2016-12-23', '2016-12-23 21:00:57', 'unblock'),
+(6, 'scet@mail.ru', 'sveta', 'sveta', '2016-12-28', '2016-12-28 19:04:51', 'unblock');
 
 -- --------------------------------------------------------
 
@@ -155,6 +188,12 @@ CREATE TABLE IF NOT EXISTS `videos` (
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `accaunt`
+--
+ALTER TABLE `accaunt`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `classes`
@@ -191,6 +230,11 @@ ALTER TABLE `videos`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `accaunt`
+--
+ALTER TABLE `accaunt`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT для таблицы `classes`
 --
 ALTER TABLE `classes`
@@ -204,12 +248,12 @@ ALTER TABLE `maintexts`
 -- AUTO_INCREMENT для таблицы `predmets`
 --
 ALTER TABLE `predmets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT для таблицы `videos`
 --
