@@ -10,8 +10,7 @@ if($_POST){
 	}
 	$query="SELECT * FROM users
 	WHERE login='$name'";
-	insert($query,'cabinet.php');
-	$already=mysqli_fetch_array($us);
+	$already=selectone($query);
 	if($already['id']){
 		$error[]='Пользователь с таким именем уже есть';
 	}

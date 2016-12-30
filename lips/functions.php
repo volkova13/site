@@ -6,7 +6,7 @@ function insert($query,$redirect){
 	}
 	$cat=mysqli_query($dbcon,$query);
 	if(!$cat){
-		exit("Ошибка");
+		exit($query);
 	}
 ?>
 <script>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 28 2016 г., 20:24
+-- Время создания: Дек 30 2016 г., 20:25
 -- Версия сервера: 5.5.50
 -- Версия PHP: 7.0.8
 
@@ -35,7 +35,14 @@ CREATE TABLE IF NOT EXISTS `accaunt` (
   `foto` tinytext NOT NULL,
   `created_at` date NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `accaunt`
+--
+
+INSERT INTO `accaunt` (`id`, `user_id`, `name`, `phone`, `address`, `foto`, `created_at`, `updated_at`) VALUES
+(1, 3, 'gfgh', '43535', 'address', 'Jellyfish.jpg', '2016-12-30', '2016-12-30 19:49:54');
 
 -- --------------------------------------------------------
 
@@ -120,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `predmets` (
   `schowhide` enum('show','hide') NOT NULL,
   `created_at` date NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `predmets`
@@ -135,7 +142,8 @@ INSERT INTO `predmets` (`id`, `class_id`, `user_id`, `name`, `body`, `picture`, 
 (6, 4, 3, 'fff', '443', 'D:/OpenServer/domains/volkova/media/foto/.Jellyfish.jpg', 'show', '2016-12-28', '2016-12-28 20:53:58'),
 (7, 4, 3, 'fff', '443', 'D:/OpenServer/domains/volkova/media/foto/.Jellyfish.jpg', 'show', '2016-12-28', '2016-12-28 20:54:36'),
 (8, 4, 3, 'fff', '443', 'D:/OpenServer/domains/volkova/media/foto/.Jellyfish.jpg', 'show', '2016-12-28', '2016-12-28 20:58:40'),
-(9, 4, 3, 'dd', 'ddd', 'D:/OpenServer/domains/volkova/media/foto/.Penguins.jpg', 'show', '2016-12-28', '2016-12-28 21:00:13');
+(9, 4, 3, 'dd', 'ddd', 'D:/OpenServer/domains/volkova/media/foto/.Penguins.jpg', 'show', '2016-12-28', '2016-12-28 21:00:13'),
+(10, 6, 3, '[bvbz', 'ппапап', 'D:/OpenServer/domains/volkova/media/foto/.', 'show', '2016-12-30', '2016-12-30 19:23:38');
 
 -- --------------------------------------------------------
 
@@ -151,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `datereg` date NOT NULL,
   `lastvisit` datetime NOT NULL,
   `blockunblock` enum('unblock','block') NOT NULL DEFAULT 'unblock'
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `users`
@@ -163,7 +171,10 @@ INSERT INTO `users` (`id`, `email`, `login`, `pass`, `datereg`, `lastvisit`, `bl
 (3, 'dr@mail.ru', 'fur', '25', '2016-12-23', '2016-12-23 20:31:27', 'unblock'),
 (4, 'volkova@tut.by', 'volkova', '152', '2016-12-23', '2016-12-23 20:57:57', 'unblock'),
 (5, 'volkova@tut.by', 'hjh', '123', '2016-12-23', '2016-12-23 21:00:57', 'unblock'),
-(6, 'scet@mail.ru', 'sveta', 'sveta', '2016-12-28', '2016-12-28 19:04:51', 'unblock');
+(6, 'scet@mail.ru', 'sveta', 'sveta', '2016-12-28', '2016-12-28 19:04:51', 'unblock'),
+(7, 'ggg@tut.by', 'mmm', '123', '2016-12-30', '2016-12-30 19:16:05', 'unblock'),
+(8, 'Svets@tut.by', 'login', '58', '2016-12-30', '2016-12-30 19:26:57', 'unblock'),
+(9, 'tut@tut.by', 'tut', '528', '2016-12-30', '2016-12-30 19:31:36', 'unblock');
 
 -- --------------------------------------------------------
 
@@ -233,7 +244,7 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT для таблицы `accaunt`
 --
 ALTER TABLE `accaunt`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `classes`
 --
@@ -248,12 +259,12 @@ ALTER TABLE `maintexts`
 -- AUTO_INCREMENT для таблицы `predmets`
 --
 ALTER TABLE `predmets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT для таблицы `videos`
 --
