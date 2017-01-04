@@ -13,20 +13,23 @@ $aut_user=selectone($query);
 <meta name='description' content='Интернет уроки по учебным предметам. Школьные предметы.Обучение.'>
 <meta name='keywords' content='технологии ит волкова светлана уроки видеоуроки предметы школа'>
 <link type='text/css' rel='stylesheet' href='media/bootstrap/css/bootstrap.css'><link type='text/css' rel='stylesheet' href='media/css/style.css'>
+<script src='media/js/jq.js'></script>
+<script src='media/js/main.js'></script>
 </head>
 <body>
 <header class='shapka'>
 <h1>Интернет уроки по учебным предметам</h1><p>Математика, физика, химия, информатика, ...</p>
 <img src='media/img/logo.png'>
+<div class="empty"></div>
 </header>
 <div class='topmenu'>
-<a href='/'>Главная</a>
-<a href='index.php?url=about'>О нас</a>
-<a href='index.php?url=video'>Видеоуроки</a>
-<a href='index.php?url=konkurs'>Конкурсы</a>
-<a href='index.php?url=proekt'>Проекты</a>
-<a href='index.php?url=Servis'>Сервисы</a>
-<a href='index.php?url=contakts'>Контакты</a>
+<a href='/' data-title='Главная' data-body='Описание' data-color='#red'>Главная</a>
+<a href='index.php?url=about' data-title='О нас' data-body='О нас' data-color='blue'>О нас</a>
+<a href='index.php?url=video' data-title='Видеоуроки' data-body='Видеоуроки' data-color='yellow'>Видеоуроки</a>
+<a href='index.php?url=konkurs' data-title='Конкурсы' data-body='Конкурсы' data-color='red'>Конкурсы</a>
+<a href='index.php?url=proekt' data-title='Проекты' data-body='Проекты' data-color='red'>Проекты</a>
+<a href='index.php?url=Servis' data-title='Сервисы' data-body='Сервисы' data-color='red'>Сервисы</a>
+<a href='index.php?url=contakts' data-title='Контакты' data-body='Контакты' data-color='red'>Контакты</a>
 </div>
 
 <div class='block'>
