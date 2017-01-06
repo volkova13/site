@@ -39,6 +39,20 @@ float:left;
 {
 display: flex;
 }
+.modal-window
+{
+position:fixed;
+top:150px;
+width:600px;
+margin-left:-300px;
+background: white;
+padding: 20px;
+border: solid 1px gold;
+box-shadow: 1px 1px 1px black;
+border-radius: 6px;
+z-index:9;
+left: 50%	
+}
 .topmenu a
 {
 color:white; 
@@ -124,6 +138,34 @@ color: white;
 padding: 50px;
 text-align:center;
 float:bottom;	
+}
+.modal-close-btn{
+	position:absolute;
+	top:1px;
+	right:1px;
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	color:red;
+	font-size:18px;
+}
+.modal-close-btn:before{
+	position:relative;
+	top:-1px;
+	right:1px;
+content:"Закрыть";
+	font-size:12px;
+}
+#jqvery-overlay{
+	background:black;
+	opacity: 0.5;
+	position:fixed;
+	height:100%;
+	width:100%;
+	top:0;
+	left:0;
+	z-index:8;
+	
 }
 @media screen and (max-width: 768px){
 .shapka img {display:none;}
