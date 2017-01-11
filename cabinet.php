@@ -42,6 +42,8 @@ if ($_SESSION['id']){
 	}
 }
 ?>
+<a href='#' id='google_search' class='btn btn-block btn-success'>Пример</a>
+<div id='empty'></div>
 <form enctype='multipart/form-data' method='post' action='cabinet.php'>
   <div class="form-group">
     <label for="name">ФИО</label>
@@ -76,6 +78,7 @@ if ($_SESSION['id']){
   </div>
   <button type="submit" class="btn btn-default">Загрузить</button>
 </form>
+<script src='/media/js/pasing.js'></script>
 <?php
 
 }else{
